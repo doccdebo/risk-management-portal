@@ -1,0 +1,22 @@
+# Python virtual environment and bytecode
+api/.venv/
+api/__pycache__/
+api/**/*.pyc
+
+# Local application data and uploaded files
+api/data/*.db
+api/storage/attachments/
+
+# Frontend dependencies and build output
+client/node_modules/
+client/dist/
+
+# Local environment files and editor settings
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Logs
+*.log

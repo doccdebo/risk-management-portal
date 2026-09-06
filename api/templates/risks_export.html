@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{{ title }}</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 24px; color: #1b1b1f; }
+  h1 { color: #0078d4; font-size: 20px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; }
+  th, td { border: 1px solid #d0d0d0; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: #0078d4; color: #fff; position: sticky; top: 0; }
+  tr:nth-child(even) { background: #f6f8fa; }
+</style>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <p>Exported on {{ risks|length }} risk(s)</p>
+  <table>
+    <thead>
+      <tr>
+        {% for key, label in columns %}<th>{{ label }}</th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for risk in risks %}
+      <tr>
+        {% for key, label in columns %}<td>{{ risk.get(key, '') }}</td>{% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
